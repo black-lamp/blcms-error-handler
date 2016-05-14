@@ -1,7 +1,13 @@
 <?
-use yii\helpers\Url;
-
 /* @var $exception \yii\web\HttpException */
+
+if ($exception) {
+    $this->title = $exception->getMessage();
+}
+else {
+    $this->title = Yii::t('modules/errorhandler/main', 'Unknown error');
+}
+
 ?>
 
 <div class="error-page">
