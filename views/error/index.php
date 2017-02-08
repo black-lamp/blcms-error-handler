@@ -34,7 +34,7 @@ if ($exception) {
             <?= Yii::t('modules/errorhandler/main', 'Back'); ?>
         </a>
     <?php else: ?>
-        <a class="btn btn-primary" href="/"><?= Yii::t('modules/errorhandler/main', 'Home'); ?></a>
+        <a class="btn btn-primary col-md-2 col-md-offset-5" href="/"><?= Yii::t('modules/errorhandler/main', 'Home'); ?></a>
     <?php endif; ?>
 </div>
 

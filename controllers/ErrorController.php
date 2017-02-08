@@ -26,10 +26,13 @@ class ErrorController extends Controller
 
     private function sendMail($exception)
     {
-        \Yii::$app->errorMailer->compose('error-mail', ['exception' => $exception])
+
+        \Yii::$app->errorMailer->compose()
             ->setFrom([\Yii::$app->getModule('error')->webmasterEmail => \Yii::$app->name ?? Url::to(['/'], true)])
-            ->setTo('xalbert.einsteinx@gmail.com')
-            ->setSubject($exception->getMessage())
+            ->setTo(\Yii::$app->getModule('error')->webmasterEmail)
+            ->setSubject('Error: ' . $exception->getMessage())
+            ->setHtmlBody('<p>' . $exception->getMessage() . '</p>
+                            <p>' . Url::to(\Yii::$app->request->url, true) . '</p>')
             ->send();
 
     }

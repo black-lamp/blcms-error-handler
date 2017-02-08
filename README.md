@@ -22,7 +22,7 @@ to the require section of your composer.json.
 ```php
 'modules' => [
         'error' => [
-            'errorAction' => '/error/error/index',
+            'class' => bl\cms\error\Module::className(),
             'webmasterEmail' => 'webmaster@test.com',
             'sendMail' => true
         ],
@@ -32,20 +32,24 @@ to the require section of your composer.json.
             'errorAction' => '/error/error/index',
         ],
         
-        'errorMailer' => [
-            'class' => yii\swiftmailer\Mailer::className(),
-            'useFileTransport' => false,
-            'messageConfig' => [
-                'charset' => 'UTF-8',
-            ],
-            'viewPath' => '@bl/blcms-error-handler/views/mail',
-            'transport' => [
-                'class' => 'Swift_SmtpTransport',
-                'username' => $params['webmasterEmail'],
-                'password' => $params['webmasterEmailPassword'],
-                'host' => $params['emailHost'],
-                'port' => $params['emailPort'],
-            ],
-        ],
+        'errorHandler' => [
+                    'errorAction' => '/error/error/index',
+                ],
+        
+                'errorMailer' => [
+                    'class' => yii\swiftmailer\Mailer::className(),
+                    'useFileTransport' => false,
+                    'messageConfig' => [
+                        'charset' => 'UTF-8',
+                    ],
+                    'transport' => [
+                        'class' => 'Swift_SmtpTransport',
+                        'username' => $params['webmasterEmail'],
+                        'password' => $params['webmasterEmailPassword'],
+                        'host' => $params['emailHost'],
+                        'port' => $params['emailPort'],
+                        'encryption' => 'ssl', // if it is need
+                    ],
+                ],
 ]
 ```
