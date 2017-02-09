@@ -48,7 +48,7 @@ if ($exception) {
         <?php if (\Yii::$app->getModule('error')->enableUserMessageSending) : ?>
             <!--ERROR REPORTING-->
             <?php $errorForm = ActiveForm::begin([
-                'action' => '/error/error/report-error'
+                'action' => Url::to(['/error/error/report-error'])
             ]); ?>
 
             <div class="col-md-4 col-md-offset-4">
@@ -74,7 +74,7 @@ if ($exception) {
             </a>
         <?php else: ?>
             <a class="btn btn-primary col-md-2 col-md-offset-5"
-               href="/"><?= Yii::t('modules/errorhandler/main', 'Home'); ?></a>
+               href="<?= Url::to(['/']);?>"><?= Yii::t('modules/errorhandler/main', 'Home'); ?></a>
         <?php endif; ?>
 
     </div>
