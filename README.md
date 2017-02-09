@@ -24,7 +24,8 @@ to the require section of your composer.json.
         'error' => [
             'class' => bl\cms\error\Module::className(),
             'webmasterEmail' => 'webmaster@test.com',
-            'sendMail' => true
+            'sendMailAutomatically' => true,
+            'enableUserMessageSending' => false
         ],
 ],
 'components' => [

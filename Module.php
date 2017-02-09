@@ -19,10 +19,16 @@ class Module extends \yii\base\Module
     public $webmasterEmail;
 
     /**
-     * If true on error mail will be send.
+     * If true on error mail will be send after page will be loaded.
      * @var bool
      */
-    public $sendMail = false;
+    public $sendMailAutomatically = false;
+
+    /**
+     * If true user will can send mail about error
+     * @var bool
+     */
+    public $enableUserMessageSending = true;
 
     /**
      * @var string
