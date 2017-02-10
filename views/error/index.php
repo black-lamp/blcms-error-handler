@@ -44,7 +44,7 @@ if ($exception) {
             <?php if (\Yii::$app->getModule('error')->enableUserMessageSending) : ?>
                 <div class="row">
 
-                    <p><?= \Yii::t('modules/errorhandler/main', 'Send information about errors in the technical support department.');?></p>
+                    <p class="text-center"><?= \Yii::t('modules/errorhandler/main', 'Send information about errors in the technical support department.');?></p>
 
                     <!--ERROR REPORTING-->
                     <?php $errorForm = ActiveForm::begin([
@@ -61,7 +61,7 @@ if ($exception) {
                             ->label(false); ?>
 
                         <?= Html::submitButton(\Yii::t('modules/errorhandler/main', 'Report an error'), [
-                            'class' => 'btn btn-warning'
+                            'class' => 'btn btn-warning col-md-12'
                         ]); ?>
                     </div>
                     <?php $errorForm::end(); ?>
