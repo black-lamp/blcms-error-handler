@@ -7,5 +7,7 @@ return [
         'На жаль, ця сторінка зараз не доступна. Приносимо свої вибачення.',
     'You can contact the site administrator for more information at' => 'Ви можете зв\'язатися з адміністратором сайту для детальної інформації',
     'Report an error' => 'Повідомити про помилку',
-    'Your error report has sent successfully' => 'Ваше повідомлення про помилку надіслано. Дякуємо.'
+    'Your error report has sent successfully' => 'Ваше повідомлення про помилку надіслано. Дякуємо.',
+    'Send information about errors in the technical support department.' => 'Надішліть інформацію про помилку в відділ техпідтримки'
+
 ];

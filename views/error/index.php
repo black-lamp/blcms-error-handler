@@ -44,6 +44,8 @@ if ($exception) {
             <?php if (\Yii::$app->getModule('error')->enableUserMessageSending) : ?>
                 <div class="row">
 
+                    <p><?= \Yii::t('modules/errorhandler/main', 'Send information about errors in the technical support department.');?></p>
+
                     <!--ERROR REPORTING-->
                     <?php $errorForm = ActiveForm::begin([
                         'action' => Url::to(['/error/error/report-error']),

@@ -7,5 +7,6 @@ return [
         'К сожалению, эта страница сейчас не доступна. Приносим свои извинения.',
     'You can contact the site administrator for more information at' => 'Вы можете связаться с администратором сайта для детальной информации',
     'Report an error' => 'Сообщить об ошибке',
-    'Your error report has sent successfully' => 'Ваше сообщение об ошибке отправлено. Спасибо.'
+    'Your error report has sent successfully' => 'Ваше сообщение об ошибке отправлено. Спасибо.',
+    'Send information about errors in the technical support department.' => 'Отправьте информацию об ошибке в отдел техподдержки'
 ];
