@@ -58,7 +58,7 @@ class ErrorController extends Controller
     {
 
         \Yii::$app->errorMailer->compose()
-            ->setFrom([\Yii::$app->getModule('error')->webmasterEmail => \Yii::$app->name ?? Url::to(['/'], true)])
+            ->setFrom([\Yii::$app->errorMailer->transport->getUsername() => \Yii::$app->name ?? Url::to(['/'], true)])
             ->setTo(\Yii::$app->getModule('error')->webmasterEmail)
             ->setSubject(\Yii::t('modules/errorhandler/main', 'Error reporting'))
             ->setHtmlBody($mailBody)
