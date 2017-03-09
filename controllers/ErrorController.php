@@ -23,7 +23,8 @@ class ErrorController extends Controller
 
             $mailBody = '<p>' . $exception->getMessage() . '</p>
                             <p>' . Url::to(\Yii::$app->request->url, true) . '</p>
-                            <p>' . \Yii::$app->request->userIP. '</p>';
+                            <p>IP: ' . \Yii::$app->request->userIP. '</p>';
+            if (!\Yii::$app->user->isGuest) $mailBody .= '<p>User email: ' . \Yii::$app->user->email. '</p>';
             $this->sendMail($mailBody);
         }
         if (\Yii::$app->getModule('error')->enableUserMessageSending) {
